@@ -19,12 +19,12 @@ function createCard(link, name) {
 
   cardDeleteButton.addEventListener("click", deleteCard);
 
-  placesList.append(cardElement);
-
   return cardElement;
 }
 
-function cardAdd() {}
+function cardAdd(cardElement) {
+  placesList.append(cardElement);
+}
 
 // @todo: Функция удаления карточки
 
