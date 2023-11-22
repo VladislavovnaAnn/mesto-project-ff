@@ -22,20 +22,20 @@ function createCard(link, name) {
   return cardElement;
 }
 
-function cardAdd(cardElement) {
+function addCard(cardElement) {
   placesList.append(cardElement);
 }
 
 // @todo: Функция удаления карточки
 
-function deleteCard(evt) {
-  evt.target.parentElement.remove();
-}
+const deleteCard = (evt) => {
+  const listItem = evt.target.closest(".card");
+  listItem.remove();
+};
 
 // @todo: Вывести карточки на страницу
 
-initialCards.forEach((cardElement) => {
-  const template = createCard(cardElement.link, cardElement.name);
-  cardAdd(template);
-  return template;
+initialCards.forEach(({ link, name }) => {
+  const template = createCard(link, name);
+  addCard(template);
 });
